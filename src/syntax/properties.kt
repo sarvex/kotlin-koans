@@ -8,20 +8,20 @@ class A {
     var propertyWithCustomAccessors: Int = 1
         set(v: Int) {
             println("setter")
-            $propertyWithCustomAccessors = v
+            field = v
         }
         get() {
             println("getter")
-            return $propertyWithCustomAccessors
+            return field
         }
 
     val propertyWithoutBackingField: Int
        get() = 42
 }
 
-// extension property cannot have a backing field
+// Extension properties cannot have a backing field
 val String.size: Int
-    get() = length()
+    get() = length
 
 class B {
     val i: Int by Delegates.notNull()

@@ -1,6 +1,6 @@
 package util
 
-suppress("UNUSED_PARAMETER")
-fun TODO(task: String, vararg references: Any?) = throw NotImplementedException("TODO: $task")
+@Suppress("UNUSED_PARAMETER")
+fun TODO(task: String, documentation: Unit = Unit, vararg references: Any?): Nothing = throw NotImplementedException("TODO: $task")
 
 class NotImplementedException(message: String): Exception(message)
